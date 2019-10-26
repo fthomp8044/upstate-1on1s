@@ -15,6 +15,9 @@ pillow = "*"
 djangorestframework = "*"
 django-storages = "*"
 boto3 = "*"
+django-rest-auth = "*"
+django-allauth = "*"
+stripe = "*"
 
 [requires]
 python_version = "3.7"

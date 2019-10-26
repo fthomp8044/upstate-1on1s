@@ -20,8 +20,15 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/', include('api.urls')),
+    path('payments', include('payments.urls')), #new
+    # path('profiles/', include('products.urls', namespace='accounts')),
+    # path('lessons/', include('products.urls', namespace='lessons')),
+    # path('cart/', include('shopping_cart.urls', namespace='shopping_cart')),
+    path('accounts/',include('allauth.urls')),
     path('', include('frontend.urls', namespace='frontend')),
 ]
 
 if settings.DEBUG: # new
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

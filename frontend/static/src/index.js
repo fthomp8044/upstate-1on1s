@@ -3,8 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {StripeProvider} from 'react-stripe-elements';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+//
+// ReactDOM.render(
+//   <Router>
+//       <Switch>
+//         <Route path='/login/' component={Login} />
+//         <Route path='/recipes/new/' component={RecipeForm} />
+//         <Route exact path='/' component={RecipeList} />
+//     </Switch>
+//   </Router>
+//   , document.getElementById('root')
+// );
+
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

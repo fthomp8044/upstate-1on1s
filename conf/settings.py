@@ -43,14 +43,40 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+
+    #third party
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'allauth', # new
+    'allauth.account', # new
+    'allauth.socialaccount', # new
+    'rest_auth.registration', # new
+    # 'static'
 
 
 
 
     #local party
+    'payments.apps.PaymentsConfig',
+    'api.apps.ApiConfig',
     'accounts.apps.AccountsConfig',
     'frontend.apps.FrontendConfig',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -151,6 +177,18 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend/static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+#stripe Settings!!!
+if DEBUG:
+    #test keys
+    STRIPE_PUBLISHABLE_KEY = 'pk_test_VemRXrMocXpHvlA1Yrs65ueB00Kl63LAn4'
+    STRIPE_SECRET_KEY = 'sk_test_CrR7VsyJoPU7egUPTRcGEPFe008isCad0N'
+else:
+    # live keys
+    STRIPE_PUBLISHABLE_KEY = 'YOUR STRIPE LIVE PUB KEY'
+    STRIPE_SECRET_KEY = 'YOUR STRIPE LIVE SECRET KEY'
+
+
 # UPLOADED FILE CONFIGURATION
 #  SEE: https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#settings
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
@@ -161,3 +199,9 @@ AWS_DEFAULT_ACL = None
 # # default will be to lock down
 AWS_S3_FILE_OVERWRITE = False
 # true is defult and will overwrite file names. Set to FALSE for files to upload and add numbers to the end of file to add repeats.
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # new
+
+# https://docs.djangoproject.com/en/2.2/ref/contrib/sites/
+# The SITE_ID setting specifies the database ID of the Site object associated with that particular settings file.
+SITE_ID = 1 # new
