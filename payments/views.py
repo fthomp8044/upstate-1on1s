@@ -22,7 +22,7 @@ def charge(request): # new
         charge = stripe.Charge.create(
             amount=500,
             currency='usd',
-            description='A Django charge',
+            description='Training Cost',
             source=request.POST['stripeToken']
         )
         return render(request, 'charge.html')
