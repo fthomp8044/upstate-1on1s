@@ -4,14 +4,15 @@ import axios from "axios";
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-class Login extends Component {
+class SignUp extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       username: '',
       email: '',
-      password: ''
+      password1: '',
+      password2: '',
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,7 +42,7 @@ class Login extends Component {
 
   return (
   <div className="container mt-5">
-    <h1>Login</h1>
+    <h1>Sign Up</h1>
 
     <div className='row'>
         <div className='col-sm-8'>
@@ -58,8 +59,12 @@ class Login extends Component {
                   <input id='email' type='email' name='email' value={this.state.email} onChange={this.handleChange} placeholder='Enter email' required="required"/>
                 </p>
                 <p>
-                  <label htmlFor="password">Password</label>
-                  <input id='password' type='password' name='password' value={this.state.password} onChange={this.handleChange} placeholder='Enter password' required="required"/>
+                  <label htmlFor="password">Password1</label>
+                  <input id='password1' type='text' name='password' value={this.state.password} onChange={this.handleChange} placeholder='Enter password' required="required"/>
+                </p>
+                <p>
+                  <label htmlFor="password">Password2</label>
+                  <input id='password2' type='text' name='password' value={this.state.password} onChange={this.handleChange} placeholder='Enter password' required="required"/>
                 </p>
                 <button>Login</button>
               </form>
@@ -72,4 +77,4 @@ class Login extends Component {
 }
 }
 
-export default Login;
+export default SignUp;

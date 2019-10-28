@@ -1,2 +1,0 @@
-(this.webpackJsonpstatic=this.webpackJsonpstatic||[]).push([[0],{11:function(o,n,t){},12:function(o,n,t){},21:function(o,n,t){"use strict";t.r(n);t(0),t(7),t(11),t(12);Boolean("localhost"===window.location.hostname||"[::1]"===window.location.hostname||window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));t(13);"serviceWorker"in navigator&&navigator.serviceWorker.ready.then((function(o){o.unregister()}))},5:function(o,n,t){o.exports=t(21)}},[[5,1,2]]]);
-//# sourceMappingURL=main.69404910.chunk.js.map
