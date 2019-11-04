@@ -26,7 +26,7 @@ class Login extends Component {
         console.log('res', res.data)
         localStorage.setItem('my-app-user', JSON.stringify(res.data)
       );
-        this.props.history.push('/')
+        this.props.history.push('/home')
     })
     .catch(error => {
         console.log(error);
@@ -40,10 +40,10 @@ class Login extends Component {
   render() {
 
   return (
-  <div className="container mt-5">
-    <h1>Login</h1>
 
-    <div className='row'>
+  <div className = "container mt-5" >
+    <h1>Login</h1>
+      <div className='row'>
         <div className='col-sm-8'>
           <div className='card'>
             <div className='card-body'>
@@ -67,9 +67,8 @@ class Login extends Component {
           </div>
         </div>
       </div>
-    </div>
-  )
-}
+      </div>)
+    }
 }
 
 export default Login;

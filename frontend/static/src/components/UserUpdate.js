@@ -4,25 +4,40 @@ import axios from "axios";
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-class Signup extends Component {
+class UserUpdate extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       username: '',
       email: '',
-      password1: '',
-      password2: '',
+      password: '',
+      userId:localStorage.getItem('user_id')
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
+componentDidMount() {
+  let myuserId = localStorage.getItem('user_id')
+  // ****WHY IS USER ID NULLLLLL!!!!!!!******
+  console.log(myuserId)
 
+  axios.get(`/api/v1/rest-auth/user/${myuserId}`, this.state)
+  .then(res => {
+      console.log('res', res.data)
+      // localStorage.setItem('my-app-user', JSON.stringify(res.data)
+
+  })
+  .catch(error => {
+      console.log(error);
+  });
+}
   handleSubmit(e) {
     e.preventDefault();
+    let myuserId= localStorage.getItem('user_id');
 
-    axios.post('/api/v1/rest-auth/registration/', this.state)
+    axios.patch(`/api/v1/rest-auth/user/${myuserId}`, this.state)
     .then(res => {
         console.log('res', res.data)
         localStorage.setItem('my-app-user', JSON.stringify(res.data)
@@ -36,16 +51,15 @@ class Signup extends Component {
 
   handleChange(e) {
     this.setState({[e.target.name]: e.target.value});
-    console.log({[e.target.name]: e.target.value})
   }
 
   render() {
 
   return (
-  <div className="container mt-5">
-    <h1>Sign Up</h1>
 
-    <div className='row'>
+  <div className = "container mt-5" >
+    <h1>Update User</h1>
+      <div className='row'>
         <div className='col-sm-8'>
           <div className='card'>
             <div className='card-body'>
@@ -60,22 +74,17 @@ class Signup extends Component {
                   <input id='email' type='email' name='email' value={this.state.email} onChange={this.handleChange} placeholder='Enter email' required="required"/>
                 </p>
                 <p>
-                  <label htmlFor="password">Password1</label>
-                  <input id='password1' type='password' name='password1' value={this.state.password} onChange={this.handleChange} placeholder='Enter password' required="required"/>
+                  <label htmlFor="password">Password</label>
+                  <input id='password' type='password' name='password' value={this.state.password} onChange={this.handleChange} placeholder='Enter password' required="required"/>
                 </p>
-                <p>
-                  <label htmlFor="password">Password2</label>
-                  <input id='password2' type='password' name='password2' value={this.state.password} onChange={this.handleChange} placeholder='Enter password' required="required"/>
-                </p>
-                <button>Sign Up</button>
+                <button>Login</button>
               </form>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  )
-}
+      </div>)
+    }
 }
 
-export default Signup;
+export default UserUpdate;

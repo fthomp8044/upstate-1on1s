@@ -60,6 +60,8 @@ INSTALLED_APPS = [
 
 
     #local party
+
+    'athletics.apps.AthleticsConfig',
     'payments.apps.PaymentsConfig',
     'api.apps.ApiConfig',
     'accounts.apps.AccountsConfig',
@@ -177,6 +179,22 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend/static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+# ACCOUNT_AUTHENTICATION_METHOD = 'email'
+#
+# # new
+# ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_UNIQUE_EMAIL = True
+# ACCOUNT_USERNAME_REQUIRED = False
+# ACCOUNT_USER_EMAIL_FIELD = 'email'
+# ACCOUNT_LOGOUT_ON_GET = True
+# REST_AUTH_SERIALIZERS = {
+#     "USER_DETAILS_SERIALIZER": "users.serializers.CustomUserDetailsSerializer",
+# }
+# REST_AUTH_REGISTER_SERIALIZERS = {
+#     "REGISTER_SERIALIZER": "users.serializers.CustomRegisterSerializer",
+# }
+#
 
 #stripe Settings!!!
 if DEBUG:

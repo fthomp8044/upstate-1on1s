@@ -5,6 +5,8 @@ from .views import IndexView
 app_name = 'frontend'
 
 urlpatterns = [
+    # path('search/', IndexView.as_view(), name= 'search'),
+    path('profile/', IndexView.as_view(), name = 'profile'),
     path('login/', IndexView.as_view(), name = 'login'),
     path('signup/', IndexView.as_view(), name = 'signup'),
     path('', IndexView.as_view(), name = 'index'),
