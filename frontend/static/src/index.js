@@ -7,10 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from './components/Signup';
 import Home from './components/Home';
 import Login from './components/Login';
+import ProfileList from './components/ProfileList';
 import ProfileForm from './components/ProfileForm';
 import SearchLesson from './components/SearchLessons';
-import UserUpdate from './components/UserUpdate';
-import ProfileDetail from './components/ProfileDetail';
+import LandingPage from './components/LandingPage';
+import ProfileEdit from './components/ProfileEdit';
 // import SearchBar from './components/Search';
 
 import * as serviceWorker from './serviceWorker';
@@ -19,19 +20,18 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch , } from 'react-router-dom';
 
 ReactDOM.render(
-  // <BrowserRouter>
       <Router>
           <Switch>
-            // <Route path='/profiledetail/' component={ProfileDetail} />
+            <Route path='/profile/edit/' component={ProfileEdit} />
             <Route path='/search/' component={SearchLesson} />
+            <Route path='/profile/list/' component={ProfileList} />
             <Route path='/profile/new/' component={ProfileForm} />
             <Route path='/signup/' component={Signup} />
             <Route path='/login/' component={Login} />
-            <Route path='/user/' component={UserUpdate} />
             <Route path='/home/' render={(props) => <Home {...props} isAuthed={true} />} />
+            <Route exact path ='/' component={LandingPage} />
         </Switch>
       </Router>
-  // </BrowserRouter>
   , document.getElementById('root')
 );
 

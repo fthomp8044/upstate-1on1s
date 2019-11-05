@@ -61,6 +61,7 @@ class ProfileRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView)
 class AthleteProfileView(views.APIView):
     model = Profile
     serializer_class = ProfileSerializer
+    queryset = Profile.objects.all()
 
     def get(self, request):
         profile = get_object_or_404(Profile, user=request.user.id)

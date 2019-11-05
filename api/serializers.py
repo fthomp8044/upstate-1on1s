@@ -6,7 +6,8 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = (
-        'id', 'avatar', 'age', 'gender', 'location', 'graduation_date', 'bio', 'position', 'weight', 'school', 'is_professional', 'draft_round', 'draft_pick', 'stat_link',
+        'id', 'avatar', 'user', 'draft_round', 'draft_pick',
+        # 'age', 'gender', 'location', 'graduation_date', 'bio', 'position', 'weight', 'school', 'is_professional', 'stat_link',
         )
 
 # class City(serializers.ModelSerializer):
