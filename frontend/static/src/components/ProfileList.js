@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 
+import { CardList } from './CardList';
 
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
@@ -15,7 +16,7 @@ class ProfileList extends Component {
 
   componentDidMount() {
 
-    axios.get('/api/v1/user/profile/')
+    axios.get('/api/v1/profile/')
     .then(res => {
         console.log('res', res.data);
         this.setState({profiles: res.data});
@@ -25,21 +26,12 @@ class ProfileList extends Component {
         console.log(error);
     });
   }
-
+// cardlist component  is repsonsible of creating the users. not how it looks.
   render() {
-
-    let profiles = this.state.profiles.map(profile => (
-    <ul>
-      <li key={profile.id}><img src={profile.avatar} alt='profileimage'/></li>
-      <li key={profile.id}><p>{profile.user}</p></li>
-    </ul>
-    ));
-
     return (
-
       <div className='Profilelist'>
         <h1>Profilelist</h1>
-        {profiles}
+        <CardList name='card-list' profiles={this.state.profiles} />
       </div>
 
     )

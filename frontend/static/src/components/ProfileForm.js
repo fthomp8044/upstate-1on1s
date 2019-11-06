@@ -187,15 +187,15 @@ class ProfileForm extends Component {
       <input name='position' value={this.state.position} type="text" onChange={this.handleChange} className="form-control" placeholder="Position" />
     </div>
     <div className="form-group">
-      <label htmlFor='bio'>draft_round:</label>
-      <input name='bio' value={this.state.draft_round} type="number" onChange={this.handleChange} className="form-control" placeholder="draft_round" />
+      <label htmlFor='draft_round'>draft_round:</label>
+      <input name='draft_round' value={this.state.draft_round} type="number" onChange={this.handleChange} className="form-control" placeholder="draft_round" />
     </div>
     <div className="form-group">
-      <label htmlFor='bio'>draft_pick:</label>
+      <label htmlFor='draft_round'>draft_pick:</label>
       <input name='draft_pick' value={this.state.draft_pick} type="number" onChange={this.handleChange} className="form-control" placeholder="draft_pick" />
     </div>
     <div className="form-group">
-      <label htmlFor='bio'>stat link:</label>
+      <label htmlFor='stat_link'>stat link:</label>
       <input name='stat_link' value={this.state.stat_link} type="url" onChange={this.handleChange} className="form-control" placeholder="stat_link" />
     </div>
     <div className="form-group">

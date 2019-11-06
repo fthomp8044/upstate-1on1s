@@ -34,6 +34,15 @@ class Profile(models.Model):
         ('OF', ('OutField')),
     )
 
+    LESSON_CHOICES = (
+        ('Pitching Lessons', ('Pitching Lessons')),
+        ('Hitting Lessons', ('Hitting Lessons')),
+        ('Fielding Lessons', ('Fielding Lessons')),
+        ('Fundamental Drills', ('fundamental Drills')),
+        ('Conditioning & Training', ('Conditioning Training'))
+
+    )
+
 
     user = models.OneToOneField(get_user_model(), null=True, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to='images/')
@@ -53,6 +62,7 @@ class Profile(models.Model):
     draft_round = models.SmallIntegerField('round:', blank=True, null=True)
     draft_pick = models.SmallIntegerField('pick:', blank=True, null=True)
     stat_link = models.URLField('stats', max_length=200, blank=True, null=True)
+    lessons = models.CharField(default='Hitting Lessons', choices=LESSON_CHOICES, max_length=200)
 
     def __str__(self):
         return self.user.username

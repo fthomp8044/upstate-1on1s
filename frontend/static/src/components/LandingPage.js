@@ -2,6 +2,7 @@ import React from "react";
 
 
 import {NavDropdown, Navbar, Nav, Form, Button} from 'react-bootstrap'
+
 function LandingPage(props) {
   return(
 // <body id='landing-page-body'>
