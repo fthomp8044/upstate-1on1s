@@ -47,7 +47,18 @@ componentDidMount() {
   .catch(error => {
       console.log(error);
   });
+
+  axios.get(`/api/v1/rest-auth/user/`)
+  .then(res => {
+      console.log('res', res.data);
+      this.setState(res.data);
+
+  })
+  .catch(error => {
+      console.log(error);
+  });
 }
+
 
 
 // deleteProfile(e) {

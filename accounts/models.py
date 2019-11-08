@@ -35,19 +35,25 @@ class Profile(models.Model):
     )
 
     LESSON_CHOICES = (
-        ('Pitching Lessons', ('Pitching Lessons')),
-        ('Hitting Lessons', ('Hitting Lessons')),
-        ('Fielding Lessons', ('Fielding Lessons')),
-        ('Fundamental Drills', ('fundamental Drills')),
-        ('Conditioning & Training', ('Conditioning Training'))
+        ('PITCHING', ('Pitching Lessons')),
+        ('HITTING', ('Hitting Lessons')),
+        ('FIELDING', ('Fielding Lessons')),
+        ('FUNDAMENTALS', ('Fundamental Drills')),
+        ('CONDITIONING', ('Conditioning Training')),
 
+    )
+
+    SPECIALTY_CHOICES = (
+        ('Pitching', ('Pitching')),
+        ('Hitting', ('Hitting')),
+        ('Fielding', ('Fielding')),
     )
 
 
     user = models.OneToOneField(get_user_model(), null=True, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to='images/')
-    # first_name = models.CharField(max_length=250)
-    # last_name = models.CharField(max_length=250)
+    first_name = models.CharField(default='blank', max_length=250)
+    last_name = models.CharField(default='blank', max_length=250)
     age = models.SmallIntegerField(default=0)
     gender = models.CharField(default='B', choices=GENDER_CHOICES, max_length=1)
     location = models.CharField(blank=True, max_length=200)
@@ -63,6 +69,7 @@ class Profile(models.Model):
     draft_pick = models.SmallIntegerField('pick:', blank=True, null=True)
     stat_link = models.URLField('stats', max_length=200, blank=True, null=True)
     lessons = models.CharField(default='Hitting Lessons', choices=LESSON_CHOICES, max_length=200)
+    specialty = models.CharField(default='Hitting', choices=SPECIALTY_CHOICES, max_length=200)
 
     def __str__(self):
         return self.user.username

@@ -1,7 +1,7 @@
 <!-- #this will redirect you to a charge page -->
 <h1>Checkout:</h1>
-<h2>Buy for $5.00</h2>
+<h2>Book for $50.00</h2>
 <form action="{% url 'charge' %}" method="post">
   {% csrf_token %}
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-description="A Django Charge" data-amount="500" data-locale="auto"></script>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-description="A Django Charge" data-amount="5000" data-locale="auto"></script>
 </form>

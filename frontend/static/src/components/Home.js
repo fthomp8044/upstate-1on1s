@@ -5,7 +5,7 @@ class Home extends Component {
 
   logOutUser(e){
     localStorage.clear();
-    this.history.push('/home')
+    this.history.push('/home/')
 
   }
 
@@ -22,7 +22,7 @@ render () {
                 <NavLink className="nav-link" to="/home/"><button>Home Page</button></NavLink>
                 <NavLink className="nav-link" to="/search/"><button>Search</button></NavLink>
                 <NavLink className="nav-link" to="/profile/new/"><button>Create Profile</button></NavLink>
-                <NavLink className="nav-link" to="/user/"><button>Update user</button></NavLink>
+                <NavLink className="nav-link" to="/profile/edit/"><button>Update user</button></NavLink>
                 <NavLink className="nav-link" to="/login/"><button>Login</button></NavLink>
                 <NavLink className="nav-link" to="/signup/"><button>Sign Up</button></NavLink>
                 <NavLink className="nav-link" to="/logout" onClick={this.logOutUser}><button>Logout</button></NavLink>

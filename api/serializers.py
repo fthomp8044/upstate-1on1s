@@ -5,10 +5,7 @@ from accounts.models import Profile
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = (
-        'id', 'avatar', 'user', 'draft_round', 'draft_pick', 'position',
-        'age', 'gender', 'location', 'graduation_date', 'bio', 'weight', 'school', 'is_professional', 'stat_link',
-        )
+        fields = '__all__'
 
 # class City(serializers.ModelSerializer):
 #     class Meta:

@@ -69,6 +69,16 @@ class AthleteProfileView(views.APIView):
         return Response(serializer.data)
 
 
+class ProfileList(generics.ListAPIView):
+    serializer_class = ProfileSerializer
+
+    def get_queryset(self):
+        # import pdb; pdb.set_trace()
+        selection = self.kwargs['selection']
+        return Profile.objects.filter(lessons=selection)
+
+
+
 
 #
 # class StudentAthleteDetailAPIView(generics.RetrieveUpdateDestroyAPIView):

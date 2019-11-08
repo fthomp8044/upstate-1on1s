@@ -4,6 +4,7 @@ from . import views
 
 
 urlpatterns = [
+    path('profile/<str:selection>/', views.ProfileList.as_view(), name='profile_list_by_lesson_type'),
     path('user/profile/', views.AthleteProfileView.as_view(), name='user_profile_view'),
     path('profile/<int:pk>/', views.ProfileRetrieveUpdateDestroyAPIView.as_view(), name='profile_retrieve_update_destroy'),
     path('profile/', views.ProfileListCreateAPIView.as_view(), name='profile_create'),

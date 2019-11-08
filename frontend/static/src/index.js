@@ -22,10 +22,10 @@ import { BrowserRouter as Router, Route, Switch , } from 'react-router-dom';
 ReactDOM.render(
       <Router>
           <Switch>
-            <Route path='/profile/edit/' component={ProfileEdit} />
+            <Route path='/profile/edit/' component={ProfileEdit} isAuthed={true} />
             <Route path='/search/' component={SearchLesson} />
-            <Route path='/profile/list/' component={ProfileList} />
-            <Route path='/profile/new/' component={ProfileForm} />
+            <Route path='/profile/list/:lesson' component={ProfileList} isAuthed={true} />
+            <Route path='/profile/new/' component={ProfileForm} isAuthed={true} />
             <Route path='/signup/' component={Signup} />
             <Route path='/login/' component={Login} />
             <Route path='/home/' render={(props) => <Home {...props} isAuthed={true} />} />
