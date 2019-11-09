@@ -12,6 +12,7 @@ class ProfileList extends Component {
       profiles: [],
       lessons: '',
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -25,16 +26,18 @@ class ProfileList extends Component {
     .catch(error => {
         console.log(error);
     });
-
-
   }
+  handleClick(e) {
+    console.log('athlete clicked');
+  }
+
 
 // cardlist component  is repsonsible of creating the users. not how it looks.
   render() {
     return (
       <div>
         <h1 className='card-list-title'>Pick Your Athlete</h1>
-          <CardList name='card-list' profiles={this.state.profiles} />
+          <CardList name='card-list' profiles={this.state.profiles}  />
       </div>
     )
   }

@@ -7,7 +7,7 @@ export const CardList = (props) => {
   console.log('props', props)
   let profiles = props.profiles.map(profile => (
     <React.Fragment>
-      <Card key={profile.id} profile={profile}/>
+      <Card key={profile.id} profile={profile} />
     </React.Fragment>
   ))
   return (

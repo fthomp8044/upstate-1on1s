@@ -11,6 +11,7 @@ export const Card = (props) => (
         <h1>{props.profile.first_name} {props.profile.last_name}</h1>
         <h3>Position:{props.profile.position}</h3>
         <h4>Specialty:{props.profile.specialty}</h4>
+        <a href={`/profile/detail/${props.profile.id}/`}>Book A Lesson</a>
       </div>
   </div>
 );

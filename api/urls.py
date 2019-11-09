@@ -4,9 +4,11 @@ from . import views
 
 
 urlpatterns = [
+
+    path('checkout/', views.PaymentView.as_view(), name='checkout'),
+    path('profile/<int:pk>/', views.ProfileRetrieveAPIView.as_view(), name='profile_retrieve_update_destroy'),
     path('profile/<str:selection>/', views.ProfileList.as_view(), name='profile_list_by_lesson_type'),
     path('user/profile/', views.AthleteProfileView.as_view(), name='user_profile_view'),
-    path('profile/<int:pk>/', views.ProfileRetrieveUpdateDestroyAPIView.as_view(), name='profile_retrieve_update_destroy'),
     path('profile/', views.ProfileListCreateAPIView.as_view(), name='profile_create'),
     path('rest-auth/registration/', include('rest_auth.registration.urls')),
     path('rest-auth/login/', views.CustomAuthToken.as_view(), name='login'),

@@ -60,7 +60,7 @@ class Profile(models.Model):
     graduation_date = models.CharField(blank=True, max_length=4)
     bats = models.CharField(default='R', choices=BATS_CHOICES, max_length=1)
     throws = models.CharField(default='R', choices=THROW_CHOICES, max_length=1)
-    weight = models.SmallIntegerField()
+    weight = models.SmallIntegerField(max_length=200)
     school = models.CharField(max_length=200)
     position = models.CharField(default='P', choices=POSITIION_CHOICES, max_length=2)
     bio = models.TextField(blank=True, null=True, max_length=500)
@@ -69,6 +69,7 @@ class Profile(models.Model):
     draft_pick = models.SmallIntegerField('pick:', blank=True, null=True)
     stat_link = models.URLField('stats', max_length=200, blank=True, null=True)
     lessons = models.CharField(default='Hitting Lessons', choices=LESSON_CHOICES, max_length=200)
+    price = models.IntegerField(default=50.00)
     specialty = models.CharField(default='Hitting', choices=SPECIALTY_CHOICES, max_length=200)
 
     def __str__(self):

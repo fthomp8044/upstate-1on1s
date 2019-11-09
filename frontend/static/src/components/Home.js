@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 class Home extends Component {
 
-  logOutUser(e){
+  logOutUser(e) {
     localStorage.clear();
     this.history.push('/home/')
 
-  }
+  };
 
 
 render () {

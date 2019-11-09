@@ -12,6 +12,9 @@ import ProfileForm from './components/ProfileForm';
 import SearchLesson from './components/SearchLessons';
 import LandingPage from './components/LandingPage';
 import ProfileEdit from './components/ProfileEdit';
+import ProfileDetail from './components/ProfileDetail';
+import CheckoutForm from './components/CheckoutForm';
+
 // import SearchBar from './components/Search';
 
 import * as serviceWorker from './serviceWorker';
@@ -22,6 +25,8 @@ import { BrowserRouter as Router, Route, Switch , } from 'react-router-dom';
 ReactDOM.render(
       <Router>
           <Switch>
+            <Route path='/checkout/' component={CheckoutForm} isAuthed={true} />
+            <Route path='/profile/detail/:id/' component={ProfileDetail} isAuthed={true} />
             <Route path='/profile/edit/' component={ProfileEdit} isAuthed={true} />
             <Route path='/search/' component={SearchLesson} />
             <Route path='/profile/list/:lesson' component={ProfileList} isAuthed={true} />

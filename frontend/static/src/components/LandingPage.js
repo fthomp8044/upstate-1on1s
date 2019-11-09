@@ -1,12 +1,14 @@
 import React from "react";
 
 
-import {NavDropdown,Dropdown, DropdownButton, Navbar, Nav, Form, Button} from 'react-bootstrap'
+import {NavDropdown,Dropdown, DropdownButton, Navbar, Nav, Form} from 'react-bootstrap'
 
 function LandingPage(props) {
 
   let selectLesson = (e) => {
     props.history.push(`/profile/list/${e.target.value}`);
+
+
   }
 
   return(
@@ -19,7 +21,7 @@ function LandingPage(props) {
         <Nav className="mr-auto">
           <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="/profile/edit/">Profile</Nav.Link>
-          <Nav.Link href="/profile/list/">Pick your Athlete</Nav.Link>
+          <Nav.Link href="/profile/list/:lessons">Pick your Athlete</Nav.Link>
           <NavDropdown title="Lessons" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -29,8 +31,12 @@ function LandingPage(props) {
           </NavDropdown>
         </Nav>
         <Form inline>
-          <Nav.Link href="/signup">Sign Up</Nav.Link>
-          <Nav.Link href="/login">Login</Nav.Link>
+          <NavDropdown title="Profile" id="basic-nav-dropdown">
+            <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+            <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="/logout">logout</NavDropdown.Item>
+          </NavDropdown>
         </Form>
       </Navbar.Collapse>
     </Navbar>
@@ -41,14 +47,13 @@ function LandingPage(props) {
             <h1>1on1s</h1>
             <h3>Train with The Upstates Finest</h3>
             <hr />
-              <DropdownButton id="dropdown-item-button" title="Pick Your Lesson" >
+              <DropdownButton id="dropdown-item-button" title="Pick Your Lesson" variant='outline-success' className='btn btn-default btn-lg' >
                 <Dropdown.Item as='button' onClick={selectLesson} value='pitching'>Pitching</Dropdown.Item>
                 <Dropdown.Item as='button' onClick={selectLesson} value='hitting' >Hitting</Dropdown.Item>
                 <Dropdown.Item as='button' onClick={selectLesson} value='fielding'>Fielding</Dropdown.Item>
                 <Dropdown.Item as='button' onClick={selectLesson} value='fundamentals'>Fundamentals</Dropdown.Item>
                 <Dropdown.Item as='button' onClick={selectLesson} value='Conditioning'>Conditioning Training</Dropdown.Item>
               </DropdownButton>
-            <Button variant="outline-success" className='btn btn-default btn-lg' href='/home'>Get Started!</Button>
           </div>
         </div>
       </div>
