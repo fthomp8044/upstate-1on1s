@@ -11,14 +11,15 @@ class CheckoutForm extends Component {
       loading: false,
       error: null,
       success: false,
-
   }
+  this.submit = this.submit.bind(this);
+
 }
 
   async submit(ev)  {
     this.setState({ loading: true });
     let {token} = await this.props.stripe.createToken();
-    axios.post(`api/v1/handle-payment`, {stripeToken: token.id})
+    axios.post(`http://127.0.0.1:8000/api/v1/checkout`, {stripeToken: token.id})
     .then(res => {
       this.setState({ loading: false, success: true });
     }).catch(err => {
@@ -62,7 +63,7 @@ const InjectedForm = injectStripe(CheckoutForm);
 
 const WrappedForm = () => (
   <StripeProvider apiKey="pk_test_VemRXrMocXpHvlA1Yrs65ueB00Kl63LAn4">
-    <div className="example">
+    <div className="container example">
       <h1>React Stripe Elements Example</h1>
       <Elements>
       <InjectedForm/>
