@@ -6,6 +6,8 @@ app_name = 'frontend'
 
 urlpatterns = [
     # path('search/', IndexView.as_view(), name= 'search'),
+    path('booking/', IndexView.as_view(), name = 'booking'),
+    path('checkout/', IndexView.as_view(), name = 'checkout'),
     path('profile/', IndexView.as_view(), name = 'profile'),
     path('login/', IndexView.as_view(), name = 'login'),
     path('signup/', IndexView.as_view(), name = 'signup'),

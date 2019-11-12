@@ -17,11 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('api.urls')),
-    path('payments/', include('payments.urls')),
+    # # path('accounts/', include('django.contrib.auth.urls')),
+    # path('accounts/', include('accounts.urls')),
+    # # path('courses/', include('courses.urls')),
+    # path('authorize/', TemplateView.as_view(template_name='home.html'), name='home'),
+    # path('payments/', include('payments.urls')),
     # path('accounts/', include('accounts.urls')),
     # path('athletics', include('athletics.urls')), #new
     path('', include('frontend.urls', namespace='frontend')),

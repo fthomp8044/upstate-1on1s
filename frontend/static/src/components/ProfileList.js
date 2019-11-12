@@ -35,8 +35,8 @@ class ProfileList extends Component {
 // cardlist component  is repsonsible of creating the users. not how it looks.
   render() {
     return (
-      <div>
-        <h1 className='card-list-title'>Pick Your Athlete</h1>
+      <div align='center'>
+        <h1 className='card-list-title' align='center'>Pick Your Athlete</h1>
           <CardList name='card-list' profiles={this.state.profiles}  />
       </div>
     )

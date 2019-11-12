@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from "axios";
 
+import Button from '@material-ui/core/Button';
+
 import {Link} from 'react-router-dom';
 
 axios.defaults.xsrfCookieName = 'csrftoken';
@@ -31,13 +33,12 @@ componentDidMount() {
   render() {
 
   return (
-    <div className = "col-md-6">
-      <section className = 'container public-profile-main-content'>
+    <div className="col-lg-12 profile-content">
+      <section className ='container public-profile-main-content'>
         <div className='clearfix'>
-          <section class='athlete-profile-main-profile-photo'>
+          <section className='athlete-profile-main-profile-photo'>
             <img src={this.state.avatar} alt='profileimage'/>
-          </section>
-          <section className='athlete-profile-top-info'>
+
             <h1 className='base-font'>
               <strong>{this.state.first_name} {this.state.last_name}</strong>
             </h1>
@@ -73,18 +74,16 @@ componentDidMount() {
               </div>
             </div>
           </section>
-        </div>
         <p itemprop='description' className='outer-box-none'>
           {this.state.bio}
-          <a href={this.state.stat_link}>View Players Stats</a>
+
         </p>
-      </section>
+        <Button><a href={this.state.stat_link}>View Players Stats</a></Button>
+        </div>
 
-
-      <section className='profile-device-spacing profile-column-2'>
         <section className='align-center message-player-panel profile-section '>
           <h6 className='outer-bottom'> Questions for {this.state.first_name} {this.state.last_name} ?</h6>
-          <a className='button button-primary full outer-bottom'>Message Trainer</a>
+          <button className='button button-primary full outer-bottom'>Message Trainer</button>
           <div className='align-center response-rate small'>
             <div className='inline-block'>
               <span className='tooltip-item'>
@@ -96,14 +95,26 @@ componentDidMount() {
         </section>
         <section className='profile-section'>
           <h6 className='align-center outer-bottom'>Trainer Schedule</h6>
-          <section className='border-top'></section>
+          <section className='border-top'>
+            <div className='contained-link-list-item bg-white '>
+              <p className='anchor'>Availble date here</p>
+              <p>time here</p>
+              <p>City here</p>          
+            </div>
+          </section>
         </section>
+        <Link to='/booking/'>
+          <button className='booking-button'>
+            Get Quote
+          </button>
+        </Link>
+        <Link to='/checkout/'>
+          <button className='checkout-button'>
+            Checkout
+          </button>
+        </Link>
         </section>
-      <Link to='/checkout/'>
-        <button className='checkout-button'>
-          Checkout
-        </button>
-      </Link>
+
     </div>)
     }
 }

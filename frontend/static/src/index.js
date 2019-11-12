@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 import Signup from './components/Signup';
 import Home from './components/Home';
 import Login from './components/Login';
@@ -14,6 +15,7 @@ import LandingPage from './components/LandingPage';
 import ProfileEdit from './components/ProfileEdit';
 import ProfileDetail from './components/ProfileDetail';
 import CheckoutForm from './components/CheckoutForm';
+import Booking from './components/Booking';
 
 // import SearchBar from './components/Search';
 
@@ -25,6 +27,7 @@ import { BrowserRouter as Router, Route, Switch , } from 'react-router-dom';
 ReactDOM.render(
       <Router>
           <Switch>
+            <Route path='/booking/' component={Booking} isAuthed={true} />
             <Route path='/checkout/' component={CheckoutForm} isAuthed={true} />
             <Route path='/profile/detail/:id/' component={ProfileDetail} isAuthed={true} />
             <Route path='/profile/edit/' component={ProfileEdit} isAuthed={true} />

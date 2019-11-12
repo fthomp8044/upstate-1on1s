@@ -25,16 +25,3 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def get_total(self, obj):
         return obj.get_total()
-
-
-# class City(serializers.ModelSerializer):
-#     class Meta:
-#         model = City
-#         fields = (
-#         'id', 'name', 'state', 'zipcode'
-#         )
-#
-# class School(serializers.ModelSerializer):
-#     class Meta:
-#         model = School
-#         fields = ('school_type')

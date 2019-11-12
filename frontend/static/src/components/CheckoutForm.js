@@ -64,7 +64,7 @@ const InjectedForm = injectStripe(CheckoutForm);
 const WrappedForm = () => (
   <StripeProvider apiKey="pk_test_VemRXrMocXpHvlA1Yrs65ueB00Kl63LAn4">
     <div className="container example">
-      <h1>React Stripe Elements Example</h1>
+      <h1>Checkout</h1>
       <Elements>
       <InjectedForm/>
       </Elements>
