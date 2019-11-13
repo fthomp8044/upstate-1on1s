@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import  NavBar  from './components/NavBar';
 
 import Signup from './components/Signup';
 import Home from './components/Home';
@@ -17,21 +15,22 @@ import ProfileDetail from './components/ProfileDetail';
 import CheckoutForm from './components/CheckoutForm';
 import Booking from './components/Booking';
 
-// import SearchBar from './components/Search';
-
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
 import * as serviceWorker from './serviceWorker';
-
 
 import { BrowserRouter as Router, Route, Switch , } from 'react-router-dom';
 
 ReactDOM.render(
       <Router>
+        <div>
+          <NavBar />
           <Switch>
             <Route path='/booking/' component={Booking} isAuthed={true} />
             <Route path='/checkout/' component={CheckoutForm} isAuthed={true} />
             <Route path='/profile/detail/:id/' component={ProfileDetail} isAuthed={true} />
             <Route path='/profile/edit/' component={ProfileEdit} isAuthed={true} />
-            <Route path='/search/' component={SearchLesson} />
+            // <Route path='/search/' component={SearchLesson} />
             <Route path='/profile/list/:lesson' component={ProfileList} isAuthed={true} />
             <Route path='/profile/new/' component={ProfileForm} isAuthed={true} />
             <Route path='/signup/' component={Signup} />
@@ -39,6 +38,7 @@ ReactDOM.render(
             <Route path='/home/' render={(props) => <Home {...props} isAuthed={true} />} />
             <Route exact path ='/' component={LandingPage} />
         </Switch>
+        </div>
       </Router>
   , document.getElementById('root')
 );

@@ -38,7 +38,7 @@ class ProfileEdit extends Component {
 
 componentDidMount() {
 
-  axios.get(`/api/v1/user/profile/`)
+  axios.get(`/api/v1/user/profile/`, {headers: {'Authorization': `Token ${JSON.stringify(localStorage.getItem('my-app-user')).token}`}})
   .then(res => {
       // console.log('res', res.data);
       this.setState(res.data);
@@ -48,7 +48,7 @@ componentDidMount() {
       console.log(error);
   });
 
-  axios.get(`/api/v1/rest-auth/user/`)
+  axios.get(`/api/v1/rest-auth/user/`, {headers: {'Authorization': `Token ${JSON.stringify(localStorage.getItem('my-app-user')).token}`}})
   .then(res => {
       console.log('res', res.data);
       this.setState(res.data);

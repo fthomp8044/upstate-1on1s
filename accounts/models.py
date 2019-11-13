@@ -80,63 +80,9 @@ class Profile(models.Model):
     lessons = models.CharField(default='Hitting Lessons', choices=LESSON_CHOICES, max_length=200)
     specialty = models.CharField(default='Hitting', choices=SPECIALTY_CHOICES, max_length=200)
     price = models.IntegerField(default=50)
+    stripe_user_id = models.CharField(max_length=255, blank=True, null=True)
+    stripe_access_token = models.CharField(max_length=255, blank=True, null=True)
+
+
     def __str__(self):
         return self.user.username
-
-# class Seller(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE)
-#     stripe_user_id = models.CharField(max_length=255, blank=True)
-#     stripe_access_token = models.CharField(max_length=255, blank=True)
-#
-#     def __str__(self):
-#         return self.user.email
-#
-# # When a new user is added, they are a buyer by default. Superusers can change a user's status.
-# class Buyer(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE)
-#
-#     def __str__(self):
-#         return self.user.email
-
-
-# class StudentAthleteProfile(models.Model):
-#
-#     BATS_CHOICES=(
-#         ('R', ('Right')),
-#         ('L', ('Left')),
-#         ('S', ('Switch')),
-#     )
-#
-#     THROW_CHOICES=(
-#         ('R', ('Right')),
-#         ('L', ('Left')),
-#     )
-#     GENDER_CHOICES=(
-#         ('G', ('Girl')),
-#         ('B', ('Boy')),
-#     )
-#
-#     POSITIION_CHOICES =(
-#         ('P', ('Pitcher')),
-#         ('C', ('Catcher')),
-#         ('1B', ('First Base')),
-#         ('SS', ('Shortstop')),
-#         ('2B', ('Second Base')),
-#         ('3B', ('Third Base')),
-#         ('OF', ('OutField')),
-#     )
-#
-#
-#     user = models.OneToOneField(User, null=True, on_delete = models.CASCADE)
-#     avatar = models.ImageField(upload_to='images/')
-#     first_name = models.CharField(max_length=250)
-#     last_name = models.CharField(max_length=250)
-#     age = models.SmallIntegerField( default=0)
-#     position = models.CharField(default='P', choices=POSITIION_CHOICES, max_length=2)
-#     graduation_date = models.CharField( blank=True, null=True, max_length=4)
-#     bio = models.TextField('bio', blank=True, null=True, max_length=500)
-#     bats = models.CharField('bats', default='R', choices=BATS_CHOICES, max_length=1)
-#     throws = models.CharField('throws', default='R', choices=THROW_CHOICES, max_length=1)
-#
-#     def __str__(self):
-#         return self.user.user

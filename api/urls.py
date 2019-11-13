@@ -6,8 +6,9 @@ from . import views
 urlpatterns = [
 
     # path('handle-payment/', views.PaymentView.as_view(), name='handle_payment'),
-    # path('/lessons/', include('lessons.urls')),
-    path('/checkout/', views.PaymentView.as_view(), name='checkout'),
+
+    path('lessons/', include('lessons.urls')),
+    path('checkout/', views.PaymentView.as_view(), name='checkout'),
     path('profile/<int:pk>/', views.ProfileRetrieveAPIView.as_view(), name='profile_retrieve_update_destroy'),
     path('profile/<str:selection>/', views.ProfileList.as_view(), name='profile_list_by_lesson_type'),
     path('user/profile/', views.AthleteProfileView.as_view(), name='user_profile_view'),

@@ -114,9 +114,8 @@ export default function Booking() {
         <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
           Booking
         </Typography>
-        <Typography variant="h5" align="center" color="textSecondary" component="p">
-          Quickly build an effective pricing table for your potential customers with this layout.
-          It&apos;s built with default Material-UI components with little customization.
+        <Typography variant="h5" align="center" color="white" component="p">
+          Choose a Lesson Package:
         </Typography>
       </Container>
       {/* End hero unit */}

@@ -41,22 +41,6 @@ class ProfileForm extends Component {
         isEditing: !state.isEditing
       }));
     }
-    //
-    // saveProfile() {
-    //   console.log('here i am')
-    //   // you need to add all the fields that are saved to state to a FormData object
-    //   // pass the FormData object to the server
-    //
-    //   let formData = new FormData();
-    //
-    //   axios.post('/api/v1/profile/', formData)
-    //   .then(res => {
-    //     console.log(res)
-    //   })
-    //   .catch(error => {
-    //     console.log(error)
-    //   });
-    // }
 
     deleteProfile() {
       this.setState(state => ({
@@ -110,18 +94,13 @@ class ProfileForm extends Component {
       axios.post('/api/v1/profile/', formData, {
         headers: {
           'content-type': 'multipart/form-data',
-          'Authoriztion': `Token ${JSON.parse(localStorage.getItem('my-app-user')).token}`
+          'Authorization': `Token ${JSON.parse(localStorage.getItem('my-app-user')).token}`
         }
       })
       .then(res => {
-          console.log('returned data:', res);
-          console.log(res.data);
-          localStorage.setItem('my-app-user', JSON.stringify(res.data)
-        );
-          this.props.history.push('/home')
-          // let user  = [...this.state.user];
-          // user.push(res.data);
-          // this.setState({user});
+          // localStorage.setItem('my-app-user', JSON.stringify(res.data)
+          // this.props.history.push('/home');
+          this.props.history.push('/authorize/');
       })
       .catch(error => {
           console.log(error);

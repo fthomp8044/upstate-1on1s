@@ -78,12 +78,12 @@ componentDidMount() {
           {this.state.bio}
 
         </p>
-        <Button><a href={this.state.stat_link}>View Players Stats</a></Button>
+        <Button variant='contained'><a href={this.state.stat_link}>View Players Stats</a></Button>
         </div>
 
         <section className='align-center message-player-panel profile-section '>
           <h6 className='outer-bottom'> Questions for {this.state.first_name} {this.state.last_name} ?</h6>
-          <button className='button button-primary full outer-bottom'>Message Trainer</button>
+          <Button className='button button-primary full outer-bottom' variant='contained'>Message Trainer</Button>
           <div className='align-center response-rate small'>
             <div className='inline-block'>
               <span className='tooltip-item'>
@@ -96,23 +96,17 @@ componentDidMount() {
         <section className='profile-section'>
           <h6 className='align-center outer-bottom'>Trainer Schedule</h6>
           <section className='border-top'>
-            <div className='contained-link-list-item bg-white '>
-              <p className='anchor'>Availble date here</p>
-              <p>time here</p>
-              <p>City here</p>          
+            <div className='contained-link-list-item '>
+
             </div>
           </section>
         </section>
         <Link to='/booking/'>
-          <button className='booking-button'>
+          <Button className='booking-button' variant='contained'>
             Get Quote
-          </button>
+          </Button>
         </Link>
-        <Link to='/checkout/'>
-          <button className='checkout-button'>
-            Checkout
-          </button>
-        </Link>
+
         </section>
 
     </div>)

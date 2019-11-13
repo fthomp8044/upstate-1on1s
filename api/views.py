@@ -67,9 +67,9 @@ class AthleteProfileView(views.APIView):
 
 class ProfileList(generics.ListAPIView):
     serializer_class = ProfileSerializer
+    permission_classes = (IsOwnerOrReadOnly,)
 
     def get_queryset(self):
-        # import pdb; pdb.set_trace()
         selection = self.kwargs['selection']
         return Profile.objects.filter(lessons=selection)
 

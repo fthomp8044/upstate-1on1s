@@ -60,7 +60,7 @@ INSTALLED_APPS = [
 
 
     #local party
-
+    'lessons.apps.LessonsConfig',
     'athletics.apps.AthleticsConfig',
     'payments.apps.PaymentsConfig',
     'api.apps.ApiConfig',
@@ -179,32 +179,17 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend/static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# ACCOUNT_USER_MODEL_USERNAME_FIELD = None
-# ACCOUNT_AUTHENTICATION_METHOD = 'email'
-#
-# # new
-# ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_UNIQUE_EMAIL = True
-# ACCOUNT_USERNAME_REQUIRED = False
-# ACCOUNT_USER_EMAIL_FIELD = 'email'
-# ACCOUNT_LOGOUT_ON_GET = True
-# REST_AUTH_SERIALIZERS = {
-#     "USER_DETAILS_SERIALIZER": "users.serializers.CustomUserDetailsSerializer",
-# }
-# REST_AUTH_REGISTER_SERIALIZERS = {
-#     "REGISTER_SERIALIZER": "users.serializers.CustomRegisterSerializer",
-# }
-#
-
-#stripe Settings!!!
+# stripe Settings!!!
 if DEBUG:
     #test keys
-    STRIPE_PUBLISHABLE_KEY = 'pk_test_VemRXrMocXpHvlA1Yrs65ueB00Kl63LAn4'
-    STRIPE_SECRET_KEY = 'sk_test_CrR7VsyJoPU7egUPTRcGEPFe008isCad0N'
+    STRIPE_PUBLISHABLE_KEY = os.environ['STRIPE_PUBLISHABLE_KEY']
+    STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY']
+    STRIPE_CONNECT_CLIENT_ID = os.environ['STRIPE_CONNECT_CLIENT_ID']
 else:
     # live keys
     STRIPE_PUBLISHABLE_KEY = 'YOUR STRIPE LIVE PUB KEY'
     STRIPE_SECRET_KEY = 'YOUR STRIPE LIVE SECRET KEY'
+    STRIPE_CONNECT_CLIENT_ID = 'YOUR STRIPE LIVE CLIENT ID'
 
 
 # UPLOADED FILE CONFIGURATION

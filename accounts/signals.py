@@ -1,10 +1,10 @@
 # from django.db.models.signals import post_save
 # from django.dispatch import receiver
 #
-# from .models import CustomUser, Buyer, Seller
+# from .models import User, Buyer, Seller
 #
 #
-# @receiver(post_save, sender=CustomUser)
+# @receiver(post_save, sender=User)
 # def user_save(sender, instance, created, **kwargs):
 #     if created:
 #         if instance.is_seller:
@@ -20,4 +20,4 @@
 #             Seller.objects.create(user=instance)
 #         if not instance.is_seller and is_seller:
 #             is_seller.delete()
-#             Buyer.objects.create(user=instance)er=instance)
+#             Buyer.objects.create(user=instance)

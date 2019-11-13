@@ -1,14 +1,12 @@
 import React from 'react';
 
 import { Card } from './Card';
-import './App.css';
+import './CardList.css';
 
 export const CardList = (props) => {
   console.log('props', props)
   let profiles = props.profiles.map(profile => (
-    <React.Fragment>
-      <Card key={profile.id} profile={profile} />
-    </React.Fragment>
+    <Card key={profile.id} profile={profile} />
   ))
   return (
     <div className='card-list'>

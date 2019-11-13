@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 
 import { CardList } from './CardList';
+
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 

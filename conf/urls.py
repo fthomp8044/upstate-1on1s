@@ -22,10 +22,10 @@ from django.views.generic.base import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('api.urls')),
-    # # path('accounts/', include('django.contrib.auth.urls')),
-    # path('accounts/', include('accounts.urls')),
-    # # path('courses/', include('courses.urls')),
-    # path('authorize/', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('lessons/', include('lessons.urls')),
+    path('authorize/', TemplateView.as_view(template_name='home.html'), name='home'),
     # path('payments/', include('payments.urls')),
     # path('accounts/', include('accounts.urls')),
     # path('athletics', include('athletics.urls')), #new
