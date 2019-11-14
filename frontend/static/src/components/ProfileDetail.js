@@ -28,88 +28,276 @@ componentDidMount() {
   });
 }
 
-
-
   render() {
 
   return (
-    <div className="col-lg-12 profile-content">
-      <section className ='container public-profile-main-content'>
-        <div className='clearfix'>
-          <section className='athlete-profile-main-profile-photo'>
-            <img src={this.state.avatar} alt='profileimage'/>
+    <div class="container bootstrap snippet">
+    <div class="row">
+  	    <div class="col-sm-10"><h1>User name</h1></div>
+    	<div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src='Rome-Braves-logo.jpg' /></a></div>
+    </div>
+    <div class="row">
+  		<div class="col-sm-3">
 
-            <h1 className='base-font'>
-              <strong>{this.state.first_name} {this.state.last_name}</strong>
-            </h1>
-            <div>
-              <p>
-                <strong>Baseball</strong>
-              </p>
-            </div>
-            <div className='inline-block outer-right-small outer-bottom-small'>
-              <div className='tier-badge tier-silver'>
-                <strong>PROFESSIONAL</strong>
-              </div>
-            </div>
-            <div className='inline-block'>
-              <div itemprop='aggregateRating' itemscope itemtype='http://schema.org/AggregateRating' className='rating'>
-                <div className='inline-block'>
-                  <span className='star'>
-                    <i className='cu-font-star'></i>
-                  </span>
-                  <span className='star'>
-                    <i className='cu-font-star'></i>
-                  </span>
-                  <span className='star'>
-                    <i className='cu-font-star'></i>
-                  </span>
-                  <span className='star'>
-                    <i className='cu-font-star'></i>
-                  </span>
-                  <span className='star'>
-                    <i className='cu-font-star'></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </section>
-        <p itemprop='description' className='outer-box-none'>
-          {this.state.bio}
 
-        </p>
-        <Button variant='contained'><a href={this.state.stat_link}>View Players Stats</a></Button>
-        </div>
+      <div class="text-center">
+        <img src={this.state.avatar} class="avatar img-circle img-thumbnail" alt="avatar" />
+        <h6>Upload a different photo...</h6>
+        <input type="file" class="text-center center-block file-upload"/>
+      </div>
 
-        <section className='align-center message-player-panel profile-section '>
-          <h6 className='outer-bottom'> Questions for {this.state.first_name} {this.state.last_name} ?</h6>
-          <Button className='button button-primary full outer-bottom' variant='contained'>Message Trainer</Button>
-          <div className='align-center response-rate small'>
-            <div className='inline-block'>
-              <span className='tooltip-item'>
-                <span className='clickable'>Fast Response Rate:</span>
-              </span>
-              <strong>100%</strong>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+            <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
+          </div>
+
+
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+          </ul>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">Social Media</div>
+            <div class="panel-body">
+            	<i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
             </div>
           </div>
-        </section>
-        <section className='profile-section'>
-          <h6 className='align-center outer-bottom'>Trainer Schedule</h6>
-          <section className='border-top'>
-            <div className='contained-link-list-item '>
 
-            </div>
-          </section>
-        </section>
-        <Link to='/booking/'>
-          <Button className='booking-button' variant='contained'>
-            Get Quote
-          </Button>
-        </Link>
+        </div>
+    	<div class="col-sm-9">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                <li><a data-toggle="tab" href="#messages">Menu 1</a></li>
+                <li><a data-toggle="tab" href="#settings">Menu 2</a></li>
+              </ul>
 
-        </section>
 
-    </div>)
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>First name</h4></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Last name</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any."/>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Phone</h4></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any."/>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>Mobile</h4></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email</h4></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Location</h4></label>
+                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location"/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="password"><h4>Password</h4></label>
+                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                            <label for="password2"><h4>Verify</h4></label>
+                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br/ >
+                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+              	</form>
+
+
+
+             </div>
+             <div class="tab-pane" id="messages">
+
+               <h2></h2>
+
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>First name</h4></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Last name</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any."/>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Phone</h4></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any."/>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>Mobile</h4></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email</h4></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Location</h4></label>
+                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location"/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="password"><h4>Password</h4></label>
+                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                            <label for="password2"><h4>Verify</h4></label>
+                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br />
+                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+              	</form>
+
+             </div>
+             <div class="tab-pane" id="settings">
+
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>First name</h4></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Last name</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any."/>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Phone</h4></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any."/>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>Mobile</h4></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email</h4></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Location</h4></label>
+                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location"/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="password"><h4>Password</h4></label>
+                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                            <label for="password2"><h4>Verify</h4></label>
+                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2."/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br />
+                              	<button class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+              	</form>
+              </div>
+
+              </div>
+          </div>
+
+        </div>
+    </div>
+
+    )
     }
 }
 

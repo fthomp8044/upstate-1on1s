@@ -30,7 +30,6 @@ ReactDOM.render(
             <Route path='/checkout/' component={CheckoutForm} isAuthed={true} />
             <Route path='/profile/detail/:id/' component={ProfileDetail} isAuthed={true} />
             <Route path='/profile/edit/' component={ProfileEdit} isAuthed={true} />
-            // <Route path='/search/' component={SearchLesson} />
             <Route path='/profile/list/:lesson' component={ProfileList} isAuthed={true} />
             <Route path='/profile/new/' component={ProfileForm} isAuthed={true} />
             <Route path='/signup/' component={Signup} />
