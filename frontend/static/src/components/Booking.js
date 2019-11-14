@@ -151,7 +151,7 @@ export default function Booking() {
                   </ul>
                 </CardContent>
                 <CardActions>
-                    <Button href='/checkout/' fullWidth variant={tier.buttonVariant} color="primary">
+                    <Button href='/checkout/${lessson.id}' fullWidth variant={tier.buttonVariant} color="primary">
                       {tier.buttonText}
                     </Button>
                 </CardActions>

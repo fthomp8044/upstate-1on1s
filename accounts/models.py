@@ -82,7 +82,7 @@ class Profile(models.Model):
     price = models.IntegerField(default=50)
     stripe_user_id = models.CharField(max_length=255, blank=True, null=True)
     stripe_access_token = models.CharField(max_length=255, blank=True, null=True)
-    logo = models.ImageField(upload_to='images/')
+    logo = models.ImageField(upload_to='images/', null=True)
 
 
     def __str__(self):

@@ -5,11 +5,18 @@ from .views import IndexView
 app_name = 'frontend'
 
 urlpatterns = [
-    # path('search/', IndexView.as_view(), name= 'search'),
-    path('booking/', IndexView.as_view(), name = 'booking'),
-    path('checkout/', IndexView.as_view(), name = 'checkout'),
-    path('profile/', IndexView.as_view(), name = 'profile'),
-    path('login/', IndexView.as_view(), name = 'login'),
     path('signup/', IndexView.as_view(), name = 'signup'),
+    path('login/', IndexView.as_view(), name = 'login'),
+
+    path('profile/detail/:id/', IndexView.as_view(), name='profile_detail'),
+    path('profile/list/:lesson', IndexView.as_view(), name='profile_list'),
+    path('profile/edit/', IndexView.as_view(), name = 'profile_edit'),
+    path('profile/new/', IndexView.as_view(), name='profile_create'),
+    path('profile/', IndexView.as_view(), name = 'profile'),
+
+    path('booking/', IndexView.as_view(), name = 'booking'),
+    path('checkout/:slug/', IndexView.as_view(), name = 'checkout'),
+
+    path('home/', IndexView.as_view(), name = 'home'),
     path('', IndexView.as_view(), name = 'index'),
 ]

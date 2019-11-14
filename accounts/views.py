@@ -48,6 +48,6 @@ class StripeAuthorizeCallbackView(View):
             profile.stripe_access_token = stripe_access_token
             profile.stripe_user_id = stripe_user_id
             profile.save()
-        url = reverse('frontend')
+        url = reverse('frontend:index')
         response = redirect(url)
         return response

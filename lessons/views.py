@@ -10,6 +10,7 @@ from django.views import View
 from django.http import JsonResponse
 
 from rest_framework import generics
+from rest_framework.permissions import AllowAny
 
 from .models import Lesson
 from .serializers import LessonSerializer
@@ -30,6 +31,7 @@ class LessonDetailAPIView(generics.RetrieveAPIView):
 #################
 
 class LessonChargeView(View):
+    permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
         stripe.api_key = settings.STRIPE_SECRET_KEY

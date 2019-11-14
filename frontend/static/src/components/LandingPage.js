@@ -18,7 +18,7 @@ function LandingPage(props) {
       <div className='row'>
         <div className='col-lg-12'>
           <div id='content'>
-            <h1>Upstate 1 on 1s</h1>
+            <h1 className='landing-page-title'>Upstate 1 on 1s</h1>
             <h3>Train with The Upstates Finest</h3>
             <hr />
               <DropdownButton id="dropdown-item-button" title="Pick Your Lesson" variant='outline-success' className='btn btn-default btn-lg' >
