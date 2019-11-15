@@ -51,7 +51,7 @@ class LessonDetail extends Component {
       <React.Fragment>
         <div>
           <h1>Purchase</h1>
-          <h4>You are buying:</h4>
+          <h4>You are Booking:</h4>
           <p>Lesson Title: <em>{this.state.title}</em></p>
           <p>Amount: ${this.state.price}</p>
           {this.state.visible && <React.Fragment><CardElement /><button type='buton' onClick={this.handlePayment}>Pay</button></React.Fragment>}

@@ -33,8 +33,8 @@ componentDidMount() {
   return (
     <div className="container bootstrap snippet">
     <div className="row">
-  	    <div className="col-sm-10"><h1>{this.state.first_name} {this.state.last_name}</h1></div>
-    	<div className="col-sm-2"><a href="/users" className="pull-right"><img title="profile image" classNameName="img-circle img-responsive" src={this.state.logo} /></a></div>
+  	    <div className="col-sm-10"><h1 className='pro-datail-page-name'>{this.state.first_name} {this.state.last_name}</h1></div>
+    	<div className="col-sm-2"><a href={this.state.team_website} target='_blank' className="pull-right"><img title="profile image" classNameName="img-circle img-responsive" src={this.state.logo} /></a></div>
     </div>
     <div className="row">
   		<div className="col-sm-3">
@@ -43,32 +43,27 @@ componentDidMount() {
         <br />
       <div className="text-center">
         <img src={this.state.avatar} className="avatar img-circle img-thumbnail" alt="avatar" />
-        <Button className='button button-primary full outer-bottom' variant='contained'><a href="mailto:fthomp2430@gmail.com">Message Trainer</a></Button>
+        <p className='booking-message'>FOR ANY PAYMENT/BOOKING CONCERNS PLEASE CONTACT DIRECTLY </p>
+        <Button className='button button-primary full outer-bottom' variant='contained'><a href="mailto:cthomp2430@gmail.com">Message Trainer</a></Button>
+      </div>
+      <div className='text-center'>
+        <br />
+        <Link to='/booking/'>
+          <Button className='button button-primary full outer-bottom' variant='contained'>Get a Quote</Button>
+        </Link>
       </div>
       <br />
-
-
           <ul className="list-group">
             <li className="list-group-item text-center"> <strong className="fa fa-dashboard fa-1x">Availbility</strong></li>
-            <li className="list-group-item text-right"><span className="pull-left"><strong></strong></span></li>
-            <li className="list-group-item text-right"><span className="pull-left"><strong></strong></span></li>
-            <li className="list-group-item text-right"><span className="pull-left"><strong></strong></span></li>
-            <li className="list-group-item text-right"><span className="pull-left"><strong></strong></span></li>
+            <li className="list-group-item text-center"><span className="pull-left"><strong>Flexible Scheduling</strong></span></li>
+            <li className="list-group-item text-center"><span className="pull-left"><strong>Availible 7 Days a Week</strong></span></li>
+            <li className="list-group-item text-center"><span className="pull-left"><strong>12:00pm - 5:00pm</strong></span></li>
           </ul>
-
-          <div className="panel panel-default">
-            <div className="panel-heading">Social Media</div>
-            <div className="panel-body">
-            	<i className="fa fa-facebook fa-2x"></i> <i className="fa fa-github fa-2x"></i> <i className="fa fa-twitter fa-2x"></i> <i className="fa fa-pinterest fa-2x"></i> <i className="fa fa-google-plus fa-2x"></i>
-            </div>
-          </div>
-
         </div>
     	<div className="col-sm-9">
             <ul className="nav nav-tabs">
                 <li className="active-tabs"><a data-toggle="tab">Information</a></li>
-                <li className="active-tabs"><a data-toggle="tab" href={this.state.stat_link}>Stats</a></li>
-                <li className="active-tabs"><a data-toggle="tab">Training Locations</a></li>
+                <li className="active-tabs"><a data-toggle="tab" target='_blank' href={this.state.stat_link}>Stats</a></li>
               </ul>
 
 
@@ -134,10 +129,8 @@ componentDidMount() {
                       </div>
                       <div className="form-group">
                            <div className="col-xs-12">
-                                <br/ >
-                                  <Link to='/booking/'>
-                                    <Button className='button button-primary full outer-bottom' variant='contained'>Get a Quote</Button>
-                                </Link>
+
+
                             </div>
                       </div>
               	</form>

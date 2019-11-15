@@ -1,8 +1,11 @@
 {% block content %}
 <h1>Django Stripe Connect</h1>
 <hr><br>
+
 {% if not user.profile.stripe_user_id %}
 <a href="{% url 'authorize' %}" class="button is-info">Connect Stripe Account</a>
 {% endif %}
+
+<!-- <a href="{% url 'authorize' %}" class="button is-info">Connect Stripe Account</a> -->
 
 {% endblock %}

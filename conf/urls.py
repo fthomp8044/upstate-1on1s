@@ -26,6 +26,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('lessons/', include('lessons.urls')),
     path('authorize/', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('rest-auth/', include('rest_auth.urls')),
     # path('payments/', include('payments.urls')),
     # path('accounts/', include('accounts.urls')),
     # path('athletics', include('athletics.urls')), #new

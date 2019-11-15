@@ -69,35 +69,22 @@ const tiers = [
   {
     title: 'Pro Package',
     price: '40',
-    description: ['1 on 1 Private Lesson','1 Session Deal with selected Trainer', 'Session Length: 30 minutes'],
+    description: ['1 on 1 Private Lesson','1 Session Deal with selected Trainer', 'Session Length: 30 minutes', 'Email Support'],
     buttonText: 'Get Started',
     buttonVariant: 'outlined',
   },
   {
     title: 'All Star Package',
-    subheader: 'Most popular',
-    price: '70',
+    price: '80',
     description: [
       '1 on 1 Private Lesson',
       '1 Session Deal with selected Trainer',
       'Session Length: 1 Hour',
+      'Email Support',
 
     ],
     buttonText: 'Get started',
     buttonVariant: 'contained',
-  },
-  {
-    title: 'Hall of Fame Package',
-    price: '300',
-    description: [
-      '1 on 1 Private Lesson',
-      '5 session Deal with Selected Trainer',
-      'Session Length: 1 Hour',
-      '5 sessions($70/ea)',
-
-    ],
-    buttonText: 'Get Started',
-    buttonVariant: 'outlined',
   },
 ];
 
@@ -108,7 +95,6 @@ export default function Booking() {
   return (
     <React.Fragment>
       <CssBaseline />
-
       {/* Hero unit */}
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
         <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
@@ -123,7 +109,7 @@ export default function Booking() {
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map(tier => (
             // Enterprise card is full width at sm breakpoint
-            <Grid item key={tier.title} xs={12} sm={tier.title === 'Hall of Fame Package' ? 12 : 6} md={4}>
+            <Grid item key={tier.title} xs={12} sm={tier.title === 'All Star Package' ? 12 : 6} md={4}>
               <Card>
                 <CardHeader
                   title={tier.title}

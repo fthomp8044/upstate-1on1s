@@ -25,8 +25,8 @@ class Profile(models.Model):
     )
 
     POSITIION_CHOICES =(
-        ('P', ('Pitcher')),
-        ('C', ('Catcher')),
+        ('Pitcher', ('Pitcher')),
+        ('Catcher', ('Catcher')),
         ('1B', ('First Base')),
         ('SS', ('Shortstop')),
         ('2B', ('Second Base')),
@@ -69,7 +69,7 @@ class Profile(models.Model):
     throws = models.CharField(default='R', choices=THROW_CHOICES, max_length=1)
     weight = models.SmallIntegerField(blank=True)
     school = models.CharField(max_length=200)
-    position = models.CharField(default='P', choices=POSITIION_CHOICES, max_length=2)
+    position = models.CharField(default='P', choices=POSITIION_CHOICES, max_length=250)
     bio = models.TextField(blank=True, null=True, max_length=500)
     is_professional = models.BooleanField(default=False)
     team_class= models.CharField(default='AA', choices=TEAM_CLASS_CHOICES, max_length=200)
@@ -83,6 +83,7 @@ class Profile(models.Model):
     stripe_user_id = models.CharField(max_length=255, blank=True, null=True)
     stripe_access_token = models.CharField(max_length=255, blank=True, null=True)
     logo = models.ImageField(upload_to='images/', null=True)
+    team_website = models.URLField('team website', max_length=200, blank=True, null=True)
 
 
     def __str__(self):

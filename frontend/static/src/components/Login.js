@@ -26,7 +26,7 @@ class Login extends Component {
         console.log('res', res.data)
         localStorage.setItem('my-app-user', JSON.stringify(res.data)
       );
-        this.props.history.push('/home')
+        this.props.history.push('/')
     })
     .catch(error => {
         console.log(error);

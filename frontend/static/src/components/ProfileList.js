@@ -17,16 +17,28 @@ class ProfileList extends Component {
   }
 
   componentDidMount() {
-    let selection = this.props.match.params.lesson.toUpperCase() ;
-    axios.get(`/api/v1/profile/${selection}/`)
-    .then(res => {
-        console.log('res', res.data);
-        this.setState({profiles: res.data});
+    if(this.props.match.params.lesson !== undefined) {
+      let selection = this.props.match.params.lesson.toUpperCase() ;
+      axios.get(`/api/v1/profile/${selection}/`)
+      .then(res => {
+          console.log('res', res.data);
+          this.setState({profiles: res.data});
 
-    })
-    .catch(error => {
-        console.log(error);
-    });
+      })
+      .catch(error => {
+          console.log(error);
+      });
+    } else {
+      axios.get(`/api/v1/profile/`)
+      .then(res => {
+          console.log('res', res.data);
+          this.setState({profiles: res.data});
+
+      })
+      .catch(error => {
+          console.log(error);
+      });
+    }
   }
   handleClick(e) {
     console.log('athlete clicked');

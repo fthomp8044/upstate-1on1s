@@ -15,6 +15,8 @@ from rest_framework.permissions import AllowAny
 from .models import Lesson
 from .serializers import LessonSerializer
 
+from accounts.models import User
+
 
 class LessonListAPIView(generics.ListAPIView):
     queryset = Lesson.objects.all()
@@ -36,24 +38,24 @@ class LessonChargeView(View):
     def post(self, request, *args, **kwargs):
         stripe.api_key = settings.STRIPE_SECRET_KEY
         json_data = json.loads(request.body)
-        lesson = Lesson.objects.filter(id=json_data['lesson_id']).first()
-        fee_percentage = .01 * int(lesson.fee)
+        athlete = User.objects.filter(id=json_data['athlete_id']).first()
+        # fee_percentage = .01 * int(lesson.fee)
         try:
             customer = get_or_create_customer(
                 # self.request.user.email,
                 # pull the email off the request
                 json_data['email'],
                 json_data['token'],
-                lesson.seller.stripe_access_token,
-                lesson.seller.stripe_user_id,
+                athlete.profile.stripe_access_token,
+                athlete.profile.stripe_user_id,
             )
             charge = stripe.Charge.create(
                 amount=json_data['amount'],
                 currency='usd',
                 customer=customer.id,
                 description=json_data['description'],
-                application_fee=int(json_data['amount'] * fee_percentage),
-                stripe_account=lesson.seller.stripe_user_id,
+                # application_fee=int(json_data['amount'] * fee_percentage),
+                stripe_account=athlete.profile.stripe_user_id,
             )
             if charge:
                 return JsonResponse({'status': 'success'}, status=202)

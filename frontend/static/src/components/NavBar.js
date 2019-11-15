@@ -1,37 +1,54 @@
 import React, {Component} from "react";
-import {NavDropdown,Dropdown, DropdownButton, Navbar, Nav, Form} from 'react-bootstrap'
+import {NavDropdown,Dropdown, DropdownItem, DropdownButton, Navbar, Nav, Form} from 'react-bootstrap'
+
+import { withRouter } from 'react-router-dom';
 
 class NavBar extends Component {
 
-  render() {
-    let selectLesson = (e) => {
-      this.state.push(`/profile/list/${e.target.value}`);
+  constructor(props) {
+    super(props);
+    this.state = {
+      selection: null
     }
+
+  }
+
+  logOutUser(e) {
+    localStorage.clear();
+    this.history.push('/home/')
+
+  };
+
+
+  render() {
+
+
+    let appUser = JSON.parse(localStorage.getItem('my-app-user'));
+    console.log('here', appUser);
+
 
     return (
       <div className='navigation-bar'>
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="/">Upstate 1 on 1s</Navbar.Brand>
+          <Navbar.Brand href="/">Upstate 1 on 1's</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="/home">Home</Nav.Link>
-              <Nav.Link href="/profile/edit/">Profile</Nav.Link>
-              <Nav.Link href="/profile/list/:lessons">Our Athletes</Nav.Link>
+              <Nav.Link href="/profile/list/">Our Athletes</Nav.Link>
               <NavDropdown title="Lessons" id="basic-nav-dropdown">
-                <NavDropdown.Item as='button' onClick={selectLesson} value='hitting'>Hitting</NavDropdown.Item>
-                <NavDropdown.Item as='button' onClick={selectLesson} value='pitching'>Pitching</NavDropdown.Item>
-                <NavDropdown.Item as='button' onClick={selectLesson} value='fielding'>Fielding</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                <DropdownItem tag="a" href="/profile/list/hitting/">Hitting</DropdownItem>
+                <DropdownItem tag="a" href="/profile/list/pitching/">Pitching</DropdownItem>
+                <DropdownItem tag="a" href="/profile/list/fielding/">Fielding</DropdownItem>
               </NavDropdown>
             </Nav>
             <Form inline>
               <NavDropdown title="Profile" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                 <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
+                <NavDropdown.Item href="/logout" onClick={this.logOutUser}>logout</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/logout">logout</NavDropdown.Item>
+                <NavDropdown.Item href="/profile/edit/">Edit Profile</NavDropdown.Item>
+                <NavDropdown.Item><p>{appUser ? appUser.username : null}</p></NavDropdown.Item>
               </NavDropdown>
             </Form>
           </Navbar.Collapse>
@@ -41,4 +58,4 @@ class NavBar extends Component {
   }
   }
 
-export default NavBar;
+export default withRouter(NavBar);
