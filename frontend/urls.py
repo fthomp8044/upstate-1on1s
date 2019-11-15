@@ -8,9 +8,12 @@ urlpatterns = [
     path('signup/', IndexView.as_view(), name='signup'),
     path('login/', IndexView.as_view(), name='login'),
 
-    path('profile/list/hitting', IndexView.as_view(), name='profile_nav_list'),
+    path('profile/list/hitting/', IndexView.as_view(), name='profile_nav_list'),
+    path('profile/list/fielding/', IndexView.as_view(), name='profile_nav_list'),
+    path('profile/list/pitching/', IndexView.as_view(), name='profile_nav_list'),
     path('profile/detail/:id/', IndexView.as_view(), name='profile_detail'),
     path('profile/list/:lesson', IndexView.as_view(), name='profile_list'),
+    path('profile/list/', IndexView.as_view(), name='profile_list'),
     path('profile/edit/', IndexView.as_view(), name='profile_edit'),
     path('profile/new/', IndexView.as_view(), name='profile_create'),
     path('profile/', IndexView.as_view(), name='profile'),

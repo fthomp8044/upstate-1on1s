@@ -36,9 +36,9 @@ class NavBar extends Component {
             <Nav className="mr-auto">
               <Nav.Link href="/profile/list/">Our Athletes</Nav.Link>
               <NavDropdown title="Lessons" id="basic-nav-dropdown">
-                <DropdownItem tag="a" href="/profile/list/hitting/">Hitting</DropdownItem>
-                <DropdownItem tag="a" href="/profile/list/pitching/">Pitching</DropdownItem>
-                <DropdownItem tag="a" href="/profile/list/fielding/">Fielding</DropdownItem>
+                <DropdownItem tag="a" href="/profile/list/hitting">Hitting</DropdownItem>
+                <DropdownItem tag="a" href="/profile/list/pitching">Pitching</DropdownItem>
+                <DropdownItem tag="a" href="/profile/list/fielding">Fielding</DropdownItem>
               </NavDropdown>
             </Nav>
             <Form inline>
